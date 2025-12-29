@@ -1,0 +1,10 @@
+# Node
+node_modules/
+web/node_modules/
+
+# Build outputs
+dist/
+.vite/
+
+# OS
+.DS_Store

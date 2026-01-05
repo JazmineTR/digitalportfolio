@@ -1,4 +1,4 @@
-import JazPic from "../assets/reading.png"
+import JazPic from "/about/reading.png"
 
 const AboutHero = () => {
     return (

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { InstagramLogoIcon, LinkedInLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 
-import HeroPic from '../assets/Jaz.jpg';
+import HeroPic from '/about/jaz.jpg';
 import { Button } from "./button";
 import { motion } from "framer-motion";
 const Hero = () => {

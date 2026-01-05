@@ -1,60 +1,66 @@
-import VSAIcon from "../assets/vsa.png";
-import CircleIcon from "../assets/circlek.png"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 
-import {GlobeIcon} from '@radix-ui/react-icons';
+const activities = [
+  {
+    title: "Watching Law & Order: SVU 👩🏻‍⚖️",
+    description:
+      "Fun fact: I'm currently up to date on all 27 seasons of the show\nFavorite episode: 'Ghost' - Season 6, Episode 16",
+  },
+   {
+    title: "Getting Boba🧋",
+    description:
+      "I am a boba consumer.\nFun facts: I've made my own boba from scratch once and want to visit all 50 states for boba (currently at 8/50)",
+  },
+  {
+    title: "Exercise 🥋",
+    description:
+      "Jiu-jitsu and pilates are what I've been into recently. Did jiu jitsu for 2 years, took a long break and am back.",
+  },
+  {
+    title: "Cooking🍳and Baking 🍰",
+    description:
+      "Favorite thing to cook: Vietnamese savory crepe (Banh xeo)\nFavorite thing to bake: Strawberry Cheesecake",
+  },
+];
 
-
-const Orgs = () => {
+export default function BeyondSchoolSection() {
   return (
-    <>
-        <div className="bg-blue-500 m-20 max-w-full">
-            <div className="grid justify-items-center m-10">
-                <h1 className="text-3xl tracking-wider flex text-black mt-10 font-mono underline">organizations i'm a part of</h1>
-            </div>
+    <section className="w-full py-10 px-6 bg-blue-200">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto"
+      >
+        <h2 className="text-3xl md:text-4xl font-semibold font-mono underline mb-6 text-center">
+        Beyond School📚
+        </h2>
 
-    
-        <div>
-            <div className="grid grid-cols-2 gap-4 p-5">
-                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:animate-pulse">
-                    <div className="md:flex">
-                        <div className='p-8'>
-                            <div className="lowercase tracking-wide text-sm font-semibold font-mono">
-                                Vietnamese Student Association (VSA)
-                            </div>
-                            <p className="mt-2 text-slate-500 font-mono">
-                                website developer for the vsa chapter at johns hopkins university
-                            </p>
-                        </div>
-                        <div className="md:shrink-0  p-5">
-                                <img src={VSAIcon} alt="VSA" width={150} height={150}/>
-                            </div>
-                    </div>
-                </div>
-                <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:animate-pulse">
-                    <div className="md:flex">
-                        <div className="md:shrink-0  p-5">
-                            <GlobeIcon width={150} height={150}/>
-                        </div>
-                        <div className='p-8'>
-                            <div className="lowercase tracking-wide text-sm font-semibold font-mono">
-                                Circle K International 
-                            </div>
-                            <p className="mt-2 text-slate-500 font-mono">
-                                member/volunteer with circle k international chapter at johns hopkins university
-                            </p>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-            <hr/>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {activities.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        
+                <CardContent className="p-6 flex flex-col gap-2 font-mono">
+                  <h3 className="lowercase text-xl font-semibold ">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground whitespace-pre-line">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
-
-    </div>
-    
-    </>
-    
+      </motion.div>
+    </section>
   );
-};
-
-export default Orgs;
+}

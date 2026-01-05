@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/footer";
 import Sidebar from "@/components/ui/sidebar";
 
 function Resume() {
@@ -5,6 +6,7 @@ function Resume() {
     <div className="bg-blue-300">
         <Sidebar/>
         <div>Resume</div>
+        <Footer/>
     </div>
   );
 }

@@ -23,7 +23,7 @@ const poemsData = [
   },
 ];
 
-const topics = ["All", "Love", "Self", "Friendship", "Miscell"];
+const topics = ["All", "Self", "Friendship", "Miscell"];
 
 export default function PoemOrganizer() {
   const [selectedTopic, setSelectedTopic] = useState("All");
@@ -41,7 +41,7 @@ export default function PoemOrganizer() {
       <div className="space-y-1">
         <h2 className="text-3xl sm:text-4xl font-semibold font-mono tracking-tight underline">poems</h2>
         <p className="text-sm font-mono">
-          {completedDays} poems written • Currently trying to write one poem a day in 2026
+          {completedDays} poems written/on this website • Currently trying to write one poem a week in 2026
         </p>
       </div>
 
